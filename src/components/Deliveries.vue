@@ -1,6 +1,6 @@
 <template>
   <div
-    class="  text-left m-3 p-3 border border-gray-300 border-1 shadow-lg rounded-lg  "
+    class="  text-left m-3 p-3 border border-gray-300 bg-white border-1 shadow-lg rounded-lg  "
     v-for="data in clientOrders"
     :key="data.id"
   >
@@ -45,7 +45,8 @@
     <div>
       <button
         @click="removeThisOrder(data.id)"
-        class="py-2 px-7 m-3 rounded-3xl font-bold uppercase border border-red-100 text-xs transition hover:-translate-y-0.5 hover:shadow-xl rounded"
+        class="py-1 px-5 m-2 rounded-xl  
+         font-bold uppercase border bg-red-700 text-white text-xs transition hover:-translate-y-0.5 hover:shadow-xl rounded"
       >
         Delete Item
       </button>
