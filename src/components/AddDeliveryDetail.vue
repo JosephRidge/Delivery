@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-1/2 border border-red-100 border-4 font-semibold m-2 rounded-xl p-2"
+    class="w-1/2 border border-red-100 border-4 font-semibold m-2 rounded-xl p-2 h-min"
   >
     <!-- Client Name -->
     <div class="m-2 text-left text-xs">
@@ -77,10 +77,7 @@ export default {
     };
   },
   methods: {
-    addNewOrder() {
-      console.log("= ", this.clientName);
-      console.log("= ", this.clientContacts);
-      console.log("= ", this.specialInstructions);
+    addNewOrder() { 
       this.sendFirebaseData(
         this.clientName,
         this.clientContacts,
