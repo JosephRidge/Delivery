@@ -76,6 +76,12 @@
         Add Delivery
       </button>
     </div>
+      <div v-if="addDeliveryClicked === true" class="transition ease-in-out delay-300
+       bg-orange-100 border-l-4 rounded border-orange-500 text-orange-700 p-4" role="alert">
+  <p class="font-bold">Success</p>
+  <p>Item SuccessFully added.</p>
+
+</div>
   </div>
 </template>
 
@@ -90,17 +96,21 @@ export default {
       dropLocation: "",
       specialInstructions: "",
       packageLabel: "",
+      addDeliveryClicked:false
     };
   },
   methods: {
     addNewOrder() { 
+        this.addDeliveryClicked = true
       this.sendFirebaseData(
         this.clientName,
         this.clientContacts,
         this.dropLocation,
         this.specialInstructions,
         this.packageLabel
-      );
+      ); 
+      setTimeout(() => {  this.addDeliveryClicked = false}, 1000);
+     
     },
 
     sendFirebaseData(name, contact, location, instructions, labelid) {
@@ -119,6 +129,7 @@ export default {
       this.specialInstructions = "";
       this.specialInstructions = "";
       this.packageLabel = "";
+    //    this.addDeliveryClicked = false
     },
   },
   mounted() {},

@@ -27,6 +27,7 @@ alt="Company Logo" srcset="" class="h-36 rounded mx-28 my-6  ">
      style="height: 800px; scrollbar-width: none; overflow-x: auto">
         <div class="mx-10 text-amber-800 font-bold text-center sticky">Current Deliveries</div>
      <Deliveries /></div>
+   
   </div>
 </div>
 </template>
