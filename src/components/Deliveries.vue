@@ -51,7 +51,7 @@
         Delete Item
       </button>
     </div>
-      <div v-if="deleteDeliveryClicked === true" class="transition ease-in-out delay-300
+      <div v-if="deleteDeliveryClicked === true " class="transition ease-in-out delay-300
        bg-red-100 border-l-4 rounded border-red-500 text-red-700 p-4" role="alert">
   <p class="font-bold">Success</p>
   <p>Item SuccessFully deleted.</p>
@@ -65,6 +65,7 @@ import { getDatabase, ref, push, onValue , remove} from "firebase/database";
 export default {
   data() {
     return {
+        
       clientName: "",
       clientContacts: "",
       dropLocation: "",
@@ -101,7 +102,7 @@ export default {
       });
     },
     removeThisOrder(id){
-     console.log("id --- ", id)
+     console.log("id --- ", id) 
      this.deleteDeliveryClicked = true
             setTimeout(() => {  this.deleteDeliveryClicked = false}, 1000);
      remove(ref(db, "deliveries/"+id));
