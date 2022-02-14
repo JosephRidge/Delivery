@@ -51,8 +51,12 @@
         Delete Item
       </button>
     </div>
-      <div v-if="deleteDeliveryClicked === true " class="transition ease-in-out delay-300
-       bg-red-100 border-l-4 rounded border-red-500 text-red-700 p-4" role="alert">
+      <div v-if="deleteDeliveryClicked === true" 
+      :class="
+      docId == data.id ? : ''
+      transition ease-in-out delay-300
+       bg-red-100 border-l-4 rounded border-red-500
+        text-red-700 p-4" role="alert">
   <p class="font-bold">Success</p>
   <p>Item SuccessFully deleted.</p>
 </div>
@@ -65,7 +69,7 @@ import { getDatabase, ref, push, onValue , remove} from "firebase/database";
 export default {
   data() {
     return {
-        
+        docId:"",
       clientName: "",
       clientContacts: "",
       dropLocation: "",
@@ -86,6 +90,7 @@ export default {
         snapshot.forEach(function (childSnapshot) {
           //   console.log(", >>> ", childSnapshot.key);
           const data = childSnapshot.val(childSnapshot.key);
+          this.docId = childSnapshot.key
           let deleivery = {
             clientName: data.clientName,
             clientContact: data.clientContact,
