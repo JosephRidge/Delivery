@@ -51,12 +51,12 @@
         Delete Item
       </button>
     </div>
+
+    <!-- TODO : Work on logic of only generating alerts on particular cards only   -->
       <div v-if="deleteDeliveryClicked === true" 
       :class="
-      docId == data.id ? : ''
-      transition ease-in-out delay-300
-       bg-red-100 border-l-4 rounded border-red-500
-        text-red-700 p-4" role="alert">
+      docId == data.id ? 
+      'transition ease-in-out delay-300 bg-red-100 border-l-4 rounded border-red-500 text-red-700 p-4':'' " role="alert">
   <p class="font-bold">Success</p>
   <p>Item SuccessFully deleted.</p>
 </div>
